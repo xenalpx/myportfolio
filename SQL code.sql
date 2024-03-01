@@ -112,10 +112,6 @@ SELECT V_NAME, V_CONTACT, V_AREACODE, V_PHONE
 FROM   VENDOR
 WHERE  V_CONTACT LIKE 'Smithso_';
 
-/* However the following query does not run. Notice the difference? */
-SELECT V_NAME, V_CONTACT, V_AREACODE, V_PHONE
-FROM   VENDOR
-WHERE  V_CONTACT LIKE ‘Smithso_’;
 
 /*Retrieving records where you know the values are in a specific range. */
 	
@@ -145,14 +141,6 @@ FROM   VENDOR
 WHERE  V_CODE IN (SELECT DISTINCT V_CODE FROM PRODUCT);
 
 /*-- Q: List the V_CODE and V_NAME of vendors that do not provide products */
-	
-SELECT V_CODE, V_NAME
-FROM   VENDOR
-WHERE  V_CODE NOT IN (SELECT DISTINCT V_CODE FROM PRODUCT);   
-
-/* will list no rows! */
-
-/*-- Correct answer */
 	
 SELECT V_CODE, V_NAME
 FROM   VENDOR
